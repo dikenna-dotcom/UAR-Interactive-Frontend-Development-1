@@ -37,7 +37,7 @@ The detailed layout choices and documented differences from the retrospective wi
 6. **Use the site on a narrow screen or keyboard:** As a visitor, I want the content and navigation to remain available.
    - Acceptance: the primary links wrap instead of disappearing, each page has a skip link, and keyboard focus is visible.
 
-These are developer-defined acceptance checks, not claims from user research. No independent visitor comprehension study has been performed.
+These are developer-defined acceptance checks, not broad claims from user research. One independent first-time visitor completed the first comprehension task unaided; their answer and the remaining visitor tasks are recorded in [testing.md](testing.md).
 
 ## Scope
 
@@ -129,7 +129,7 @@ The workspace contained no Git repository or prior commits when inspected on 24 
 
 ## Testing
 
-See [testing.md](testing.md) for the browser version, five-width matrix, interaction checks, validator results and limitations. The separate [manual test sheet](docs/manual-test-sheet.md) distinguishes completed 200% and second-browser checks from partial 400% reflow and physical-phone checks, and lists screen-reader and independent-visitor checks still pending. The latest saved W3C report contains no errors or messages across all eight pages. The current `assets/css/style.css` was submitted to the official Jigsaw CSS 3 validator: HTTP 200, valid, zero errors and zero warnings. Its response and SHA-256 fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt`. Lighthouse was not available in the local tools checked.
+See [testing.md](testing.md) for the browser version, five-width matrix, interaction checks, validator results and limitations. The separate [manual test sheet](docs/manual-test-sheet.md) distinguishes completed 200% and second-browser checks from partial 400% reflow, physical-phone, screen-reader and independent-visitor results. The latest saved W3C report contains no errors or messages across all eight pages. The current `assets/css/style.css` was submitted to the official Jigsaw CSS 3 validator: HTTP 200, valid, zero errors and zero warnings. Its response and SHA-256 fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt`. Lighthouse was not available in the local tools checked.
 
 ## Local setup in VS Code
 
@@ -157,6 +157,6 @@ This exact Python server command was used for the current local preview. The Liv
 - The official rubric has missing criterion text, including portions of learning outcome 1 and missing criterion rows. See [docs/assessment-matrix.md](docs/assessment-matrix.md); this matrix is not an official grade decision.
 - The supplied rubric requires real incremental Git history and final deployment. The new local baseline and this review's separate commit do not recreate earlier development history. No GitHub remote or public deployment exists; no public action will happen without approval.
 - Wireframes are retrospective and cannot prove pre-implementation planning.
-- No independent user tester or complete screen-reader review is available. A partial user-reported Narrator/Edge spot check is documented in [testing.md](testing.md); versions and full semantic coverage were not recorded. A user-reported physical-phone review covered all eight routes in portrait and landscape, but its browser/OS versions, viewport and detailed content observations were not recorded. Edge was used for the second-browser check; Chrome and Firefox were not available.
+- Independent visitor testing is partial: one first-time visitor attempted all six tasks unaided. Task 1 leaves uncertainty about whether the visitor understood that the site does not change compatibility; a neutral clarification was not obtained because the visitor was busy. Tasks 2–5 did not demonstrate the requested workflow, outcome, site-boundary or scenario/FAQ understanding. The visitor reached FAQ by keyboard for task 6, but the route/key sequence was not observed. A complete screen-reader review is not available; a partial user-reported Narrator/Edge spot check is documented in [testing.md](testing.md), but versions and full semantic coverage were not recorded. A user-reported physical-phone review covered all eight routes in portrait and landscape, but its browser/OS versions, viewport and detailed content observations were not recorded. Edge was used for the second-browser check; Chrome and Firefox were not available.
 - Lighthouse was unavailable. The current Jigsaw response reports zero errors and zero warnings.
 - Product-specific facts beyond the supplied concept brief require owner confirmation before being described as current or planned capability.
