@@ -46,7 +46,7 @@ These are project-defined acceptance checks, not results from user research. No 
 | R9 | Review image alternatives and diagram semantics | No raster images or `<img>` elements occur on site pages. The CSS/HTML home diagram has a labelled figure and caption describing it as illustrative | Reviewed; image-quality criterion is not applicable |
 | R10 | Calculate selected authored foreground/background contrast pairs using WCAG relative luminance | All nine listed pairs exceed 4.5:1; calculations and scope limits are in `docs/evidence/contrast-results.txt` | Spot check only; not a complete WCAG audit |
 | R11 | Submit all eight final HTML files to the official Nu Checker | Zero errors, warnings or informational messages for all eight pages; version and per-file output are saved in `docs/evidence/w3c-validation.json` | Pass on final files |
-| R12 | Submit the custom stylesheet to the official Jigsaw CSS Validator | The previous successful CSS 3 report had 0 errors and 1 warning (“Due to their dynamic nature, CSS variables are currently not statically checked”). It predates the final diagram typography/breakpoint adjustment. The follow-up request returned HTTP 500 (“Reader used”), so it did not validate the current stylesheet; the saved response is historical, not a final pass | Earlier stylesheet passed; current stylesheet not revalidated |
+| R12 | Submit the current `assets/css/style.css` to the official Jigsaw CSS 3 Validator | HTTP 200; validator response says `validity: true`, 0 errors, 0 warnings. Submitted-file SHA-256: `EFD0F92ADAEA6762BA9460F4959D11BE698FEC1E6D2E9A9787A8C5D134D83DB5`. The exact response and fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt` | Pass for the recorded file fingerprint |
 | R13 | Check for Lighthouse CLI | `lighthouse` was not available in PATH | Not run; no Lighthouse score is claimed |
 
 ## Visual review notes
@@ -76,7 +76,8 @@ The PNGs are browser captures of the local implementation. They do not constitut
 
 - No screen-reader testing, independent user testing, physical mobile-device testing, second-browser comparison or hosted-site parity test was performed.
 - Lighthouse was unavailable and not run.
-- The saved Jigsaw result (zero errors, one CSS-variable warning) is from before the final diagram CSS adjustment. The current stylesheet could not be revalidated because Jigsaw returned HTTP 500 (“Reader used”); retry when the service is available.
+- Real browser zoom at 200%, 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks remain pending. See [manual-test-sheet.md](docs/manual-test-sheet.md); the 200% root-font simulation is not a substitute.
+- Earlier Jigsaw attempts are retained as historical records; the current stylesheet's latest official result is the zero-error, zero-warning response indexed above.
 - Keyboard checks covered the skip-link route and one native disclosure interaction; a complete keyboard-only traversal of every page was not recorded.
 - Contrast calculations cover selected authored pairs only. No full WCAG audit, automated accessibility score or assistive-technology conformance claim is made.
 - No external website links currently occur in the page content. If one is added, the supplied new-tab requirement must be applied and retested.

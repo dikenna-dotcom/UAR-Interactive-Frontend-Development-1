@@ -36,6 +36,8 @@ Pass, Warning and Blocker are used only as explanations of a possible review mod
 
 ## Layout differences recorded after implementation
 
+This verification/documentation pass does not change the visual design or UI. The next planned work is manual verification on real browser zoom, a second browser, a physical phone, a screen reader and independent visitors; the exact procedures are in [manual-test-sheet.md](manual-test-sheet.md). Any later design change should be planned here before implementation. The existing wireframes remain post-implementation reconstructions.
+
 - The header now follows the supplied six-link primary navigation, with Use Cases and FAQ in the footer and contextual links.
 - The workflow list is semantic and ordered; the previous display used generic `div` elements.
 - The FAQ has four stable category fragments and eleven questions. One answer per category is initially visible through native disclosure.

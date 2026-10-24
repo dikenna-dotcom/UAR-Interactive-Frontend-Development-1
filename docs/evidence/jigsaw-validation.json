@@ -1,24 +1,19 @@
 {
-  "cssvalidation" : {
-     "uri"       : "style.css",
-     "checkedby" : "http://www.w3.org/2005/07/css-validator",
-     "csslevel"  : "css3",
-     "date"      : "2026-10-24T03:05:34Z",
-     "timestamp" : "1792854334639",
-     "validity"  : true,
-     "result"    : {
-		"errorcount"   : 0,
-		"warningcount" : 1
-                   }
-       ,
-     "warnings"   : [
-      {
-         "source"  : "file://localhost/style.css",
-         "line"    : 36,
-         "message" :  "Due to their dynamic nature, CSS variables are currently not statically checked",
-         "type"    :  "css-variable",
-         "level"   : 0
-      }
-                     ]
+  "submittedFile": "assets/css/style.css",
+  "sha256": "EFD0F92ADAEA6762BA9460F4959D11BE698FEC1E6D2E9A9787A8C5D134D83DB5",
+  "submittedOn": "2026-10-24",
+  "httpStatus": 200,
+  "endpoint": "https://jigsaw.w3.org/css-validator/validator",
+  "cssvalidation": {
+    "uri": "style.css",
+    "checkedby": "http://www.w3.org/2005/07/css-validator",
+    "csslevel": "css3",
+    "date": "2026-10-24T03:31:53Z",
+    "timestamp": "1792855913274",
+    "validity": true,
+    "result": {
+      "errorcount": 0,
+      "warningcount": 0
     }
+  }
 }

@@ -1,11 +1,25 @@
-Jigsaw CSS Validator report before the final diagram adjustment
+Official Jigsaw CSS Validator response — current stylesheet
 Endpoint: https://jigsaw.w3.org/css-validator/validator
+Submitted file: assets/css/style.css
+SHA-256: EFD0F92ADAEA6762BA9460F4959D11BE698FEC1E6D2E9A9787A8C5D134D83DB5
+Submitted on: 2026-10-24
+HTTP status: 200
+Validator response date: 2026-10-24T03:31:53Z
 CSS level: css3
-Validity: True
+Validity: true
 Errors: 0
-Warnings: 1
-HTTP: HTTP 200; content-type application/json;charset=utf-8; bytes 654
+Warnings: 0
 
+Exact response fields:
+{
+  "uri": "style.css",
+  "checkedby": "http://www.w3.org/2005/07/css-validator",
+  "csslevel": "css3",
+  "date": "2026-10-24T03:31:53Z",
+  "timestamp": "1792855913274",
+  "validity": true,
+  "errorcount": 0,
+  "warningcount": 0
+}
 
-Warnings:
-- line 36: Due to their dynamic nature, CSS variables are currently not statically checked
+Earlier attempts, including their warnings and HTTP 500 responses, are retained separately in jigsaw-attempt.txt. They do not replace this current-file result.

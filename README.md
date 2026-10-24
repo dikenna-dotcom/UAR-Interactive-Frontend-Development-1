@@ -12,6 +12,16 @@ The intended audience is a first-time visitor or stakeholder who wants to unders
 
 The content is organised so a new visitor can start at Home, a returning visitor can jump to Compatibility or FAQ, and a reviewer can follow the proposed workflow and examine project scope.
 
+### Five UX planes and design rationale
+
+- **Strategy — why the site exists:** First-time visitors and stakeholders need to understand the proposed UAR model without mistaking this informational website for a working runtime. The six user stories turn that goal into checks for understanding, interpretation, trust, context and access.
+- **Scope — what is included:** Eight focused explanatory pages, a conceptual workflow, illustrative outcomes, hypothetical scenarios and a glossary. Runtime execution, device scanning, uploads, live verdicts and security certification are excluded because this project has no evidence or implementation for those capabilities.
+- **Structure — how information is grouped:** Distinct page roles let visitors choose the question they came to answer. Contextual next-reading links connect related topics; four FAQ groups separate common questions; shared navigation and footer keep the site findable without duplicating full explanations across pages.
+- **Skeleton — how each page is arranged:** A consistent header, one main landmark, logical headings and a shared footer provide orientation. Ordered workflow markup communicates sequence. Responsive Grid/Flexbox changes columns at content-driven breakpoints; the home diagram stacks below 1180px so its labels have room.
+- **Surface — how the visual design supports use:** Dark text on a pale background, a restrained blue accent, system fonts, shared spacing and panel styles create readable hierarchy without external assets. A small HTML/CSS diagram illustrates the concept and is explicitly labelled as illustrative.
+
+The detailed layout choices and documented differences from the retrospective wireframes are in [docs/design-decisions.md](docs/design-decisions.md). Current screenshots and local checks are indexed in [docs/evidence/README.md](docs/evidence/README.md) and [testing.md](testing.md); the unperformed manual checks have a separate [manual test sheet](docs/manual-test-sheet.md). This review update changes documentation and evidence only, not the visual design.
+
 ### User stories and acceptance checks
 
 1. **Understand UAR:** As a first-time visitor, I want to identify the purpose of UAR from the site itself.
@@ -109,17 +119,17 @@ Screenshots below are captures of the locally served implementation, not mockups
 - Python 3.12.10 `http.server` for the verified local preview
 - Integrated browser in VS Code (reported user agent: Chromium 150, Electron 43.7.7) for responsive and interaction checks
 - Official W3C Nu HTML Checker for page validation
-- The last successful Jigsaw CSS 3 result had zero errors and one warning that custom properties cannot be statically checked; it predates the final small diagram adjustment, and the recheck returned HTTP 500, so the current CSS still needs validation
+- The current custom stylesheet passed the official Jigsaw CSS 3 validator with zero errors and zero warnings; its exact file fingerprint and response are saved in `docs/evidence/jigsaw-validation.json`
 
 No JavaScript, CSS framework, package manager, build process or backend is used.
 
 ## Development and review history
 
-The original workspace was not a Git repository when reviewed on 24 October 2026. Therefore there is no verifiable commit history or remote. No repository was initialised and no retrospective commits were created. The pages and stylesheet were reviewed locally, and this pass made changes to navigation, semantic workflow markup, FAQ grouping, responsive styling, claims and documentation. The post-implementation wireframes are identified as such.
+The workspace contained no Git repository or prior commits when inspected on 24 October 2026. The development before this review therefore has no recoverable commit-by-commit history; it has not been reconstructed. A local repository was initialized and the current workspace snapshot was recorded as commit `85f84cc` (`Record current workspace baseline`), explicitly as a present-day baseline rather than an earlier development event. Subsequent review changes are recorded in separate local commits. No remote is configured and nothing has been pushed.
 
 ## Testing
 
-See [testing.md](testing.md) for the browser version, five-width matrix, five UX-plane rationale, interaction checks, validator results, limitations and remaining manual checks. The latest saved W3C report contains no errors or messages across all eight pages. The last successful Jigsaw report is valid with zero errors and one custom-property warning, but predates the final small diagram adjustment; the current stylesheet still needs an official recheck. Lighthouse was not available in the local tools checked.
+See [testing.md](testing.md) for the browser version, five-width matrix, interaction checks, validator results and limitations. The separate [manual test sheet](docs/manual-test-sheet.md) identifies real-zoom/reflow, second-browser, physical-device, screen-reader and independent-visitor tasks that remain unperformed. The latest saved W3C report contains no errors or messages across all eight pages. The current `assets/css/style.css` was submitted to the official Jigsaw CSS 3 validator: HTTP 200, valid, zero errors and zero warnings. Its response and SHA-256 fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt`. Lighthouse was not available in the local tools checked.
 
 ## Local setup in VS Code
 
@@ -145,8 +155,8 @@ This exact Python server command was used for the current local preview. The Liv
 ## Limitations and next work
 
 - The official rubric has missing criterion text, including portions of learning outcome 1 and missing criterion rows. See [docs/assessment-matrix.md](docs/assessment-matrix.md); this matrix is not an official grade decision.
-- The supplied rubric requires real Git history and final deployment. Both remain unfulfilled; no public action will happen without approval.
+- The supplied rubric requires real incremental Git history and final deployment. The new local baseline and this review's separate commit do not recreate earlier development history. No GitHub remote or public deployment exists; no public action will happen without approval.
 - Wireframes are retrospective and cannot prove pre-implementation planning.
 - No independent user tester, screen reader, physical mobile device or second browser was available in this review.
-- Lighthouse was unavailable. The previous Jigsaw result reported one non-error warning that it cannot statically check custom properties; a fresh request for the final stylesheet failed with HTTP 500 and should be retried.
+- Lighthouse was unavailable. The current Jigsaw response reports zero errors and zero warnings.
 - Product-specific facts beyond the supplied concept brief require owner confirmation before being described as current or planned capability.
