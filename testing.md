@@ -8,6 +8,7 @@
 - Python: 3.12.10.
 - Browser: VS Code integrated browser, user agent `Code/1.143.1 Chrome/150.0.7871.250 Electron/43.7.7`; device pixel ratio reported as 2.5.
 - Additional real-browser check: Microsoft Edge 155.0.4283.62, with its displayed browser zoom set to 200% (not simulated through CSS). The effective viewport was 764 CSS pixels. Windows UI Automation inspected the browser's zoom indicator and page focus; Windows keyboard automation sent Tab and Enter to the Edge window.
+- Second-browser conditions: Microsoft Edge 155.0.4283.62 on Windows 11 Pro 10.0.26200. At 100% zoom the maximized browser reported a 1528 CSS-pixel viewport; at 500% zoom it reported 302 CSS px. Chrome and Firefox executables/App Paths were not found. Route and width checks used the real Edge window, browser accessibility tree and in-page width measurements.
 - Responsive checks used CSS viewport widths of 320, 390, 768, 1024 and 1440 pixels. Full-page captures are indexed in [docs/evidence/README.md](docs/evidence/README.md).
 - Validators: W3C Nu HTML Checker (`26.10.18`) and the Jigsaw CSS Validator. The saved responses are [w3c-validation.json](docs/evidence/w3c-validation.json), [jigsaw-validation.json](docs/evidence/jigsaw-validation.json) and [jigsaw-validation.txt](docs/evidence/jigsaw-validation.txt).
 
@@ -50,6 +51,8 @@ These are project-defined acceptance checks, not results from user research. No 
 | R11 | Submit all eight final HTML files to the official Nu Checker | Zero errors, warnings or informational messages for all eight pages; version and per-file output are saved in `docs/evidence/w3c-validation.json` | Pass on final files |
 | R12 | Submit the current `assets/css/style.css` to the official Jigsaw CSS 3 Validator | HTTP 200; validator response says `validity: true`, 0 errors, 0 warnings. Submitted-file SHA-256: `EFD0F92ADAEA6762BA9460F4959D11BE698FEC1E6D2E9A9787A8C5D134D83DB5`. The exact response and fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt` | Pass for the recorded file fingerprint |
 | R13 | Check for Lighthouse CLI | `lighthouse` was not available in PATH | Not run; no Lighthouse score is claimed |
+| R14 | Set actual Edge browser zoom to 200%; visit all eight routes; measure document width and review the full pages | Edge 155.0.4283.62 on Windows 11 Pro 10.0.26200 showed 200% zoom and a 764 CSS-pixel viewport. All eight routes had zero measured horizontal overflow. The first viewport of every route was visually reviewed locally; the user then reported scrolling through all eight pages with no defects. | Pass; full-page visual observation is user-reported |
+| R15 | Compare a second browser at desktop and narrow widths; check all routes, current-page state, a navigation link, skip link and FAQ disclosure | In Edge, the 100% desktop viewport was 1528 CSS px and the 500% narrow viewport was 302 CSS px. All eight routes loaded at both widths. Edge UI Automation reported `HorizontalViewSize=100%` on every desktop route; at 302 px `clientWidth=scrollWidth=302` on seven routes, with Security reached through its internal link and reporting `HorizontalViewSize=100%`. The desktop capture showed the Security current-page highlight; the narrow Home capture showed all six nav links wrapped across two rows without overlap. Home-to-Features and Features-to-Security navigation worked; Tab/Enter on the skip link reached `#main-content`; Enter collapsed and reopened the FAQ answer. | Pass for Edge; 500% was used to reach a 302 CSS-pixel viewport and is not the separate 400% reflow check |
 
 ## Visual review notes
 
@@ -59,6 +62,7 @@ These are project-defined acceptance checks, not results from user research. No 
 - At 1440px the footer has three desktop columns; “More” no longer falls alone onto a second row.
 - Text, card spacing, labels and section backgrounds were compared across the full-page captures. The five widths were checked for horizontal page overflow; no global overflow clipping was added.
 - At actual Edge browser zoom of 200%, all eight routes had zero measured horizontal overflow. The first viewport of each route was visually inspected locally; the user reported no defects after scrolling through all eight pages.
+- In the second-browser Edge run, all eight routes were visited at a 1528 CSS-pixel desktop viewport and a 302 CSS-pixel narrow viewport. The narrow Home navigation wrapped across two rows; all six destinations remained visible. The desktop Security capture showed the current-page highlight.
 - There are no raster assets to assess for sharpness or aspect ratio.
 
 The PNGs are browser captures of the local implementation. They do not constitute independent usability feedback or hosted-site evidence.
@@ -77,9 +81,9 @@ The PNGs are browser captures of the local implementation. They do not constitut
 
 ## Known limitations and unperformed checks
 
-- No screen-reader testing, independent user testing, physical mobile-device testing, second-browser comparison or hosted-site parity test was performed.
+- No screen-reader testing, independent visitor testing or physical mobile-device testing was performed. Edge was checked as a second browser; Chrome and Firefox were not found on this machine. Hosted-site parity is untested.
 - Lighthouse was unavailable and not run.
-- At actual 200% browser zoom, all eight routes had zero measured horizontal overflow, and the user reported no defects after scrolling through them. This real-zoom check is separate from the 200% root-font simulation. Still pending: 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks. See [manual-test-sheet.md](docs/manual-test-sheet.md).
+- At actual 200% browser zoom, all eight routes had zero measured horizontal overflow, and the user reported no defects after scrolling through them. This real-zoom check is separate from the 200% root-font simulation. Edge was also checked at 1528 CSS px and 302 CSS px; the 302 px viewport was produced at 500% zoom and is not the separate 400% reflow check. Still pending: 400% reflow, a physical mobile device, screen-reader navigation and independent visitor tasks. See [manual-test-sheet.md](docs/manual-test-sheet.md).
 - Earlier Jigsaw attempts are retained as historical records; the current stylesheet's latest official result is the zero-error, zero-warning response indexed above.
 - Keyboard checks covered the skip-link route and one native disclosure interaction; a complete keyboard-only traversal of every page was not recorded.
 - Contrast calculations cover selected authored pairs only. No full WCAG audit, automated accessibility score or assistive-technology conformance claim is made.
