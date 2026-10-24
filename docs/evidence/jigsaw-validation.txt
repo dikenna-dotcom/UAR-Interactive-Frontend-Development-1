@@ -1,0 +1,11 @@
+Jigsaw CSS Validator report before the final diagram adjustment
+Endpoint: https://jigsaw.w3.org/css-validator/validator
+CSS level: css3
+Validity: True
+Errors: 0
+Warnings: 1
+HTTP: HTTP 200; content-type application/json;charset=utf-8; bytes 654
+
+
+Warnings:
+- line 36: Due to their dynamic nature, CSS variables are currently not statically checked
