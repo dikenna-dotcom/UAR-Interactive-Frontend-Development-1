@@ -84,4 +84,25 @@ No wording or additional criterion IDs have been inferred. Request the complete 
 
 ## Readiness decision
 
-The site is **not submission-ready**: mandatory GitHub publication and final deployment are incomplete, and the complete official criterion grid is unavailable. The site remains local and must not be published without the learner's explicit approval. Historical development commits, independent/device testing and Lighthouse are also incomplete. No grade outcome is established or guaranteed.
+### Explicit assessment requirements
+
+| Requirement | Current evidence | Remaining action | Submission blocker? |
+| --- | --- | --- | --- |
+| Six mandatory requirements in §18.2, especially Git/GitHub history and final deployment | Local baseline and subsequent genuine review commits exist; there is no remote, public push or deployed site. Earlier development history cannot be recovered | Continue genuine local commits. Keep GitHub publication and deployment on hold until explicit approval; then publish/deploy and perform hosted parity checks | **Yes** — GitHub publication and deployment are mandatory in the supplied brief and remain incomplete |
+| Supplied pass criteria, including 2.2, 2.3, 2.6, 5.1 and 5.5 | Jigsaw current CSS pass, W3C HTML pass on eight unchanged pages, five-width local review, link audit and saved screenshots | Complete the outstanding manual functionality/usability/responsive checks in [manual-test-sheet.md](manual-test-sheet.md); retest any findings | **Yes, while supplied criterion 5.1 remains only partially evidenced** |
+| Supplied merit evidence M(ii) and M(iii) | Developer-reviewed journeys and acceptance checks are documented; no independent visitor task results are recorded | If a real tester is available, run and record the six story tasks; verify and log the journeys | **Conditional / evidence incomplete** — M(ii) specifically asks for a real tester task where available; M(iii) asks for verified journeys |
+| Complete official assessment mapping | Known missing items are listed below; full grid was not supplied | Obtain the complete current official grid and map its missing rows without inference | **Coverage blocker** — full criterion-by-criterion assessment cannot yet be confirmed |
+
+### Supplied-brief QA protocols and additional checks
+
+These checks support assessment evidence but are not separate numbered criteria unless stated above.
+
+| Check | Classification | Current evidence / status |
+| --- | --- | --- |
+| Browser zoom at 200% | Supplied brief §12 accessibility test protocol; supports 1.4, 2.6 and 5.1 | **Pending.** A 200% root-font simulation was performed; it is not equivalent to browser zoom |
+| Second browser and physical mobile device | Supplied brief §12 asks to test available browsers/devices and leave unavailable checks pending; supports 2.6 and 5.1 | **Pending** |
+| Screen-reader spot check | Conditional supplied brief §12 protocol; supports 2.7 and 5.1 | **Pending**; procedure is recorded in the manual test sheet |
+| 400% zoom/reflow at approximately 320 CSS px | Additional stress test beyond the supplied brief's 200% zoom/reflow protocol | **Pending** |
+| Lighthouse | Supplied brief §12 says to run it if available; diagnostic, not proof or a grade criterion | **Not run**; Lighthouse was unavailable in the checked local tools |
+
+The site is **not submission-ready**: mandatory GitHub publication and final deployment remain incomplete and are on hold pending explicit approval; supplied manual testing is incomplete; and the complete official criterion grid is unavailable. Do not push or deploy publicly without approval. No grade outcome is established or guaranteed.
