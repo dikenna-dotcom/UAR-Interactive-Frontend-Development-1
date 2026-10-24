@@ -70,7 +70,7 @@ The PNGs are browser captures of the local implementation. They do not constitut
 | Enlarged text at 200% caused content to extend beyond the 320px viewport | Added `overflow-wrap: anywhere`, which only breaks a word when needed | All eight pages report no document-width overflow in the same enlarged-text simulation |
 | Nu reported an invalid `aria-label` on a generic homepage container | Replaced it with a labelled `figure` and explanatory caption | Final Nu report has zero messages on all pages |
 | Nu reported an informational “Section lacks heading” message on five layout-only wrappers | Changed those wrappers to `div`; retained labelled semantic sections for the FAQ groups and actual content sections | Final Nu report has zero messages on all eight pages |
-| The Jigsaw checker warned that `clip-path` was unknown, and separately warned that CSS variables cannot be statically checked | Removed the unrecognised `clip-path` declaration; retained the one-pixel visually-hidden technique and the readable design tokens | Final Jigsaw result has zero errors and one documented CSS-variable warning |
+| Earlier Jigsaw runs reported an unrecognised `clip-path` declaration and a custom-property warning | Removed the unsupported declaration; submitted the current stylesheet to the official validator again | Current-file response is valid with zero errors and zero warnings; exact file hash and response are recorded in `docs/evidence/jigsaw-validation.json` |
 
 ## Known limitations and unperformed checks
 
