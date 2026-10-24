@@ -7,6 +7,7 @@
 - Local preview: `python -m http.server 8000`, started from the project root; the exact command was used to serve the pages at `http://localhost:8000/`.
 - Python: 3.12.10.
 - Browser: VS Code integrated browser, user agent `Code/1.143.1 Chrome/150.0.7871.250 Electron/43.7.7`; device pixel ratio reported as 2.5.
+- Additional real-browser check: Microsoft Edge 155.0.4283.62, with its displayed browser zoom set to 200% (not simulated through CSS). The effective viewport was 764 CSS pixels. Windows UI Automation inspected the browser's zoom indicator and page focus; Windows keyboard automation sent Tab and Enter to the Edge window.
 - Responsive checks used CSS viewport widths of 320, 390, 768, 1024 and 1440 pixels. Full-page captures are indexed in [docs/evidence/README.md](docs/evidence/README.md).
 - Validators: W3C Nu HTML Checker (`26.10.18`) and the Jigsaw CSS Validator. The saved responses are [w3c-validation.json](docs/evidence/w3c-validation.json), [jigsaw-validation.json](docs/evidence/jigsaw-validation.json) and [jigsaw-validation.txt](docs/evidence/jigsaw-validation.txt).
 
@@ -41,7 +42,7 @@ These are project-defined acceptance checks, not results from user research. No 
 | R4 | Check every local page link and fragment against the served routes and element IDs | 149 internal links checked across eight pages; zero missing targets or fragments and no external website links | Pass locally; hosted-path behavior not tested |
 | R5 | Count current-page links and structural landmarks in all pages | Six-link primary navigation; current-page state is correct where a primary destination exists; FAQ and Use Cases use the footer state; one H1 and main per page | Pass by source audit |
 | R6 | External website anchors and new-tab behavior | No external website anchors are present in the site pages, so there was no external-link behavior to exercise | Not applicable |
-| R7 | Keyboard: Tab to skip link, inspect its visible outline, activate it, then check the fragment and focused main landmark | Skip link received visible focus; Enter moved to `#main-content` and focused the main landmark | Pass for this path |
+| R7 | At actual 200% browser zoom in Edge, Tab to the skip link, inspect its visible outline, press Enter, and check the fragment and focus destination | The skip link received visible focus; Enter changed the URL to `#main-content` and moved keyboard focus from the hyperlink to the page's focused main-content group. Keyboard events were sent to the real Edge window through Windows keyboard automation. | Pass for this path; not a full keyboard-only traversal |
 | R8 | FAQ: inspect each category's initial open count; toggle the first disclosure using Enter twice | Each of four groups had one initially open answer; keyboard interaction closed and reopened the tested answer | Pass for tested native disclosure behavior |
 | R9 | Review image alternatives and diagram semantics | No raster images or `<img>` elements occur on site pages. The CSS/HTML home diagram has a labelled figure and caption describing it as illustrative | Reviewed; image-quality criterion is not applicable |
 | R10 | Calculate selected authored foreground/background contrast pairs using WCAG relative luminance | All nine listed pairs exceed 4.5:1; calculations and scope limits are in `docs/evidence/contrast-results.txt` | Spot check only; not a complete WCAG audit |
@@ -76,7 +77,7 @@ The PNGs are browser captures of the local implementation. They do not constitut
 
 - No screen-reader testing, independent user testing, physical mobile-device testing, second-browser comparison or hosted-site parity test was performed.
 - Lighthouse was unavailable and not run.
-- Real browser zoom at 200%, 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks remain pending. See [manual-test-sheet.md](docs/manual-test-sheet.md); the 200% root-font simulation is not a substitute.
+- At actual 200% browser zoom, the first viewport of all eight routes was visually reviewed and each route had zero measured horizontal overflow; full-page visual review remains pending before that manual-test row is complete. The 200% root-font simulation is not a substitute. Also pending: 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks. See [manual-test-sheet.md](docs/manual-test-sheet.md).
 - Earlier Jigsaw attempts are retained as historical records; the current stylesheet's latest official result is the zero-error, zero-warning response indexed above.
 - Keyboard checks covered the skip-link route and one native disclosure interaction; a complete keyboard-only traversal of every page was not recorded.
 - Contrast calculations cover selected authored pairs only. No full WCAG audit, automated accessibility score or assistive-technology conformance claim is made.
