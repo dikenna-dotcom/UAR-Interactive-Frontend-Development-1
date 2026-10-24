@@ -129,7 +129,7 @@ The workspace contained no Git repository or prior commits when inspected on 24 
 
 ## Testing
 
-See [testing.md](testing.md) for the browser version, five-width matrix, interaction checks, validator results and limitations. The separate [manual test sheet](docs/manual-test-sheet.md) identifies real-zoom/reflow, second-browser, physical-device, screen-reader and independent-visitor tasks that remain unperformed. The latest saved W3C report contains no errors or messages across all eight pages. The current `assets/css/style.css` was submitted to the official Jigsaw CSS 3 validator: HTTP 200, valid, zero errors and zero warnings. Its response and SHA-256 fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt`. Lighthouse was not available in the local tools checked.
+See [testing.md](testing.md) for the browser version, five-width matrix, interaction checks, validator results and limitations. The separate [manual test sheet](docs/manual-test-sheet.md) distinguishes completed 200% and second-browser checks from partial 400% reflow and physical-phone checks, and lists screen-reader and independent-visitor checks still pending. The latest saved W3C report contains no errors or messages across all eight pages. The current `assets/css/style.css` was submitted to the official Jigsaw CSS 3 validator: HTTP 200, valid, zero errors and zero warnings. Its response and SHA-256 fingerprint are recorded in `docs/evidence/jigsaw-validation.json` and `.txt`. Lighthouse was not available in the local tools checked.
 
 ## Local setup in VS Code
 
@@ -157,6 +157,6 @@ This exact Python server command was used for the current local preview. The Liv
 - The official rubric has missing criterion text, including portions of learning outcome 1 and missing criterion rows. See [docs/assessment-matrix.md](docs/assessment-matrix.md); this matrix is not an official grade decision.
 - The supplied rubric requires real incremental Git history and final deployment. The new local baseline and this review's separate commit do not recreate earlier development history. No GitHub remote or public deployment exists; no public action will happen without approval.
 - Wireframes are retrospective and cannot prove pre-implementation planning.
-- No independent user tester, screen reader, physical mobile device or second browser was available in this review.
+- No independent user tester or completed screen-reader check is available. A user-reported physical-phone review covered all eight routes in portrait and landscape, but its browser/OS versions, viewport and detailed content observations were not recorded. Edge was used for the second-browser check; Chrome and Firefox were not available.
 - Lighthouse was unavailable. The current Jigsaw response reports zero errors and zero warnings.
 - Product-specific facts beyond the supplied concept brief require owner confirmation before being described as current or planned capability.

@@ -99,10 +99,11 @@ These checks support assessment evidence but are not separate numbered criteria 
 
 | Check | Classification | Current evidence / status |
 | --- | --- | --- |
-| Browser zoom at 200% | Supplied brief §12 accessibility test protocol; supports 1.4, 2.6 and 5.1 | **Pending.** A 200% root-font simulation was performed; it is not equivalent to browser zoom |
-| Second browser and physical mobile device | Supplied brief §12 asks to test available browsers/devices and leave unavailable checks pending; supports 2.6 and 5.1 | **Pending** |
+| Browser zoom at 200% | Supplied brief §12 accessibility test protocol; supports 1.4, 2.6 and 5.1 | **Pass for recorded Edge run.** Actual 200% zoom, 764 CSS-pixel viewport and zero measured horizontal overflow on all eight routes; user reported no defects after scrolling all pages. See [manual-test-sheet.md](manual-test-sheet.md) and [testing.md](../testing.md). |
+| Second browser | Supplied brief §12 asks to test available browsers and record versions; supports 2.6 and 5.1 | **Pass for Edge.** All routes checked at 100%/1528 CSS px and 500%/302 CSS px with navigation and keyboard spot checks. Chrome and Firefox unavailable. |
+| Physical mobile device | Supplied brief §12 asks to test available devices and leave unavailable checks pending; supports 2.6 and 5.1 | **Partial, user-reported.** All eight routes opened/looked usable in portrait and landscape on iPhone 16/iOS/Chrome; FAQ touch disclosure toggled. OS/browser versions, viewport and detailed content checks not recorded. |
 | Screen-reader spot check | Conditional supplied brief §12 protocol; supports 2.7 and 5.1 | **Pending**; procedure is recorded in the manual test sheet |
-| 400% zoom/reflow at approximately 320 CSS px | Additional stress test beyond the supplied brief's 200% zoom/reflow protocol | **Pending** |
+| 400% zoom/reflow at approximately 320 CSS px | Additional stress test beyond the supplied brief's 200% zoom/reflow protocol | **Partial, user-reported.** All eight pages reported readable/usable at 400%; FAQ disclosure and skip link worked by keyboard. CSS viewport, browser version and objective overflow measurement not recorded. |
 | Lighthouse | Supplied brief §12 says to run it if available; diagnostic, not proof or a grade criterion | **Not run**; Lighthouse was unavailable in the checked local tools |
 
 The site is **not submission-ready**: mandatory GitHub publication and final deployment remain incomplete and are on hold pending explicit approval; supplied manual testing is incomplete; and the complete official criterion grid is unavailable. Do not push or deploy publicly without approval. No grade outcome is established or guaranteed.
