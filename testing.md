@@ -44,6 +44,7 @@ These are project-defined acceptance checks, not results from user research. No 
 | R6 | External website anchors and new-tab behavior | No external website anchors are present in the site pages, so there was no external-link behavior to exercise | Not applicable |
 | R7 | At actual 200% browser zoom in Edge, Tab to the skip link, inspect its visible outline, press Enter, and check the fragment and focus destination | The skip link received visible focus; Enter changed the URL to `#main-content` and moved keyboard focus from the hyperlink to the page's focused main-content group. Keyboard events were sent to the real Edge window through Windows keyboard automation. | Pass for this path; not a full keyboard-only traversal |
 | R8 | FAQ: inspect each category's initial open count; toggle the first disclosure using Enter twice | Each of four groups had one initially open answer; keyboard interaction closed and reopened the tested answer | Pass for tested native disclosure behavior |
+| R14 | Set actual Edge browser zoom to 200%; visit all eight routes; measure document width and review the full pages | Edge 155.0.4283.62 on Windows 11 Pro 10.0.26200 showed 200% zoom and a 764 CSS-pixel viewport. All eight routes had zero measured horizontal overflow. The first viewport of every route was visually reviewed locally; the user then reported scrolling through all eight pages with no defects. | Pass; full-page visual observation is user-reported |
 | R9 | Review image alternatives and diagram semantics | No raster images or `<img>` elements occur on site pages. The CSS/HTML home diagram has a labelled figure and caption describing it as illustrative | Reviewed; image-quality criterion is not applicable |
 | R10 | Calculate selected authored foreground/background contrast pairs using WCAG relative luminance | All nine listed pairs exceed 4.5:1; calculations and scope limits are in `docs/evidence/contrast-results.txt` | Spot check only; not a complete WCAG audit |
 | R11 | Submit all eight final HTML files to the official Nu Checker | Zero errors, warnings or informational messages for all eight pages; version and per-file output are saved in `docs/evidence/w3c-validation.json` | Pass on final files |
@@ -57,6 +58,7 @@ These are project-defined acceptance checks, not results from user research. No 
 - At 768px the shared layouts use the stacked arrangement. At 1024px and 1440px the wider grid layouts return.
 - At 1440px the footer has three desktop columns; “More” no longer falls alone onto a second row.
 - Text, card spacing, labels and section backgrounds were compared across the full-page captures. The five widths were checked for horizontal page overflow; no global overflow clipping was added.
+- At actual Edge browser zoom of 200%, all eight routes had zero measured horizontal overflow. The first viewport of each route was visually inspected locally; the user reported no defects after scrolling through all eight pages.
 - There are no raster assets to assess for sharpness or aspect ratio.
 
 The PNGs are browser captures of the local implementation. They do not constitute independent usability feedback or hosted-site evidence.
@@ -77,7 +79,7 @@ The PNGs are browser captures of the local implementation. They do not constitut
 
 - No screen-reader testing, independent user testing, physical mobile-device testing, second-browser comparison or hosted-site parity test was performed.
 - Lighthouse was unavailable and not run.
-- At actual 200% browser zoom, the first viewport of all eight routes was visually reviewed and each route had zero measured horizontal overflow; full-page visual review remains pending before that manual-test row is complete. The 200% root-font simulation is not a substitute. Also pending: 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks. See [manual-test-sheet.md](docs/manual-test-sheet.md).
+- At actual 200% browser zoom, all eight routes had zero measured horizontal overflow, and the user reported no defects after scrolling through them. This real-zoom check is separate from the 200% root-font simulation. Still pending: 400% reflow, a second browser, a physical mobile device, screen-reader navigation and independent user tasks. See [manual-test-sheet.md](docs/manual-test-sheet.md).
 - Earlier Jigsaw attempts are retained as historical records; the current stylesheet's latest official result is the zero-error, zero-warning response indexed above.
 - Keyboard checks covered the skip-link route and one native disclosure interaction; a complete keyboard-only traversal of every page was not recorded.
 - Contrast calculations cover selected authored pairs only. No full WCAG audit, automated accessibility score or assistive-technology conformance claim is made.
