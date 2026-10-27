@@ -60,6 +60,103 @@
         </div>
       </div>
 
+      <section class="section section-muted" aria-labelledby="planner-title">
+        <div class="container two-column planner-layout">
+          <div class="planner-intro">
+            <p class="eyebrow">Interactive planning aid</p>
+            <h2 id="planner-title">Compare stated requirements with a hypothetical environment.</h2>
+            <p>
+              Enter application requirements and the environment's stated capacity. The planner compares operating-system choices, memory and free storage, then explains matches, missing information and stated mismatches.
+            </p>
+            <p class="planner-boundary">
+              This is an illustrative comparison of information you enter, not verified compatibility, a UAR result, a security review or a safety verdict. It does not inspect software or your device. Your entries stay in this page and are not sent or saved.
+            </p>
+          </div>
+
+          <form class="planner-form" id="review-planner">
+            <div class="form-field">
+              <label for="application-name">Application name</label>
+              <input id="application-name" name="applicationName" type="text" maxlength="80" required>
+            </div>
+            <div class="form-field">
+              <label for="target-environment">Target environment</label>
+              <input id="target-environment" name="targetEnvironment" type="text" maxlength="120" required>
+            </div>
+            <fieldset class="review-topics review-data">
+              <legend>Application requirements</legend>
+              <p class="field-help">Choose all operating systems the application is stated to support. Leave items unknown if you do not have reliable information.</p>
+              <div class="review-options">
+                <label><input type="checkbox" name="supportedPlatforms" value="windows"> Windows</label>
+                <label><input type="checkbox" name="supportedPlatforms" value="macos"> macOS</label>
+                <label><input type="checkbox" name="supportedPlatforms" value="linux"> Linux</label>
+              </div>
+              <div class="form-field">
+                <label for="required-memory">Minimum memory (GB)</label>
+                <input id="required-memory" name="requiredMemory" type="number" min="0" step="0.1" inputmode="decimal">
+              </div>
+              <div class="form-field">
+                <label for="required-storage">Minimum free storage (GB)</label>
+                <input id="required-storage" name="requiredStorage" type="number" min="0" step="0.1" inputmode="decimal">
+              </div>
+            </fieldset>
+            <fieldset class="review-topics review-data">
+              <legend>Hypothetical target environment</legend>
+              <div class="form-field">
+                <label for="target-platform">Operating system</label>
+                <select id="target-platform" name="targetPlatform">
+                  <option value="">Not known</option>
+                  <option value="windows">Windows</option>
+                  <option value="macos">macOS</option>
+                  <option value="linux">Linux</option>
+                  <option value="other">Other / not listed</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="available-memory">Available memory (GB)</label>
+                <input id="available-memory" name="availableMemory" type="number" min="0" step="0.1" inputmode="decimal">
+              </div>
+              <div class="form-field">
+                <label for="available-storage">Available free storage (GB)</label>
+                <input id="available-storage" name="availableStorage" type="number" min="0" step="0.1" inputmode="decimal">
+              </div>
+            </fieldset>
+            <div class="form-field">
+              <label for="known-requirements">Known requirements <span>(optional)</span></label>
+              <textarea id="known-requirements" name="knownRequirements" rows="4" maxlength="600" aria-describedby="requirements-help"></textarea>
+              <p class="field-help" id="requirements-help">Add other details to investigate, such as dependencies, network needs, or where the requirement information came from.</p>
+            </div>
+            <fieldset class="review-topics">
+              <legend>Topics to include in the review checklist</legend>
+              <label><input type="checkbox" name="topics" value="dependencies"> Dependencies and versions</label>
+              <label><input type="checkbox" name="topics" value="security"> Security and privacy</label>
+              <label><input type="checkbox" name="topics" value="policy"> Organisation policy</label>
+              <label><input type="checkbox" name="topics" value="operations"> Operational support</label>
+            </fieldset>
+            <div class="planner-actions">
+              <button class="button button-primary" type="submit">Create review checklist</button>
+              <button class="button button-secondary" type="reset">Clear form</button>
+            </div>
+          </form>
+
+          <p class="visually-hidden" id="planner-status" aria-live="polite"></p>
+          <section class="planner-result" id="review-result" aria-labelledby="review-result-title" hidden>
+            <h2 id="review-result-title" tabindex="-1">Illustrative comparison results</h2>
+            <p class="planner-result-boundary">These outcomes compare only the values entered here. They are not verified compatibility, security or safety results.</p>
+            <dl class="planner-summary" id="review-summary"></dl>
+            <p class="overall-result" id="overall-result"></p>
+            <h3>Requirement comparisons</h3>
+            <ul class="decision-list" id="comparison-results"></ul>
+            <h3>Suggested review steps</h3>
+            <ul class="check-list" id="review-steps"></ul>
+            <h3>Topics you selected</h3>
+            <ul class="check-list" id="selected-topics"></ul>
+          </section>
+          <noscript>
+            <p class="planner-boundary">Enable JavaScript to create a review checklist. No information is submitted or stored.</p>
+          </noscript>
+        </div>
+      </section>
+
       <section class="section section-muted">
         <div class="container two-column">
           <div>
@@ -108,5 +205,6 @@
         </div>
       </div>
     </footer>
+    <script src="assets/js/review-planner.js"></script>
   </body>
 </html>

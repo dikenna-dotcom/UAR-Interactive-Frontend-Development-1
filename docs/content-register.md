@@ -1,4 +1,4 @@
-# UAR content and claim register
+UAR content and claim register
 
 This register reflects only the supplied master brief. The separate UAR runtime repository and its implementation were not inspected. Claims about existing product capabilities therefore remain unverified; where content is retained, it is labelled as a proposed model, illustration or site boundary.
 
@@ -13,6 +13,6 @@ This register reflects only the supplied master brief. The separate UAR runtime 
 | Use-case examples | Master brief section 2 and 7 | Authored hypotheticals; not product outcomes | Explicitly labelled hypothetical; no scenario is stated as tested | Use Cases |
 | Project status and future direction | Master brief section 2 and 7 | Runtime status and roadmap not supplied | Website scope is stated; future product status is left for owner confirmation | About, FAQ |
 
-## Review rule
+Review rule
 
 Any later change that describes a capability as available or planned must be checked with the owner and entered here with its source, status, approved wording and destination. This register does not certify product facts outside the supplied brief.

@@ -1,6 +1,6 @@
-# Comparable Code Institute milestone projects
+Comparable Code Institute milestone projects
 
-## Method and limits
+Method and limits
 
 Accessed 24 October 2026. Repository trees, README files, home-page HTML and the named custom stylesheets were inspected through GitHub. The visible READMEs identify the projects as Code Institute User Centric Frontend / Milestone Project 1 work. The repositories are older examples and do not establish the current rubric, grades or compliance with today's accessibility guidance. No hosted demo was reviewed in a browser. The root listings did not show a licence file for these five repositories; no licence conclusion is made for files outside the inspected paths. Public availability is not permission to reuse a student's code, content or assets.
 
@@ -12,12 +12,12 @@ Accessed 24 October 2026. Repository trees, README files, home-page HTML and the
 | [daisybutler/Fizzo-Bar-and-Lounge-project01](https://github.com/daisybutler/Fizzo-Bar-and-Lounge-project01) | [README](https://github.com/daisybutler/Fizzo-Bar-and-Lounge-project01/blob/63ea1f2f36ce64abd132fe043c48dd6a49de8f83/README.md), [index.html](https://github.com/daisybutler/Fizzo-Bar-and-Lounge-project01/blob/63ea1f2f36ce64abd132fe043c48dd6a49de8f83/index.html), [style.css](https://github.com/daisybutler/Fizzo-Bar-and-Lounge-project01/blob/63ea1f2f36ce64abd132fe043c48dd6a49de8f83/assets/css/style.css) | README describes a booking goal and UX; the site has distinct menu, gallery, booking and contact pages; HTML includes Bootstrap and Font Awesome; CSS separates site-wide and page styles | Clear audience and owner goals help determine which pages and actions are useful | The booking/conversion goal depends on pages and external libraries not relevant to the informational UAR scope | Keep each UAR page's purpose distinct and link content to visitor needs; do not add a form or booking-like action |
 | [S-Lowes/Code-Institute-MS1](https://github.com/S-Lowes/Code-Institute-MS1) | [README](https://github.com/S-Lowes/Code-Institute-MS1/blob/61d09f60aeb443a4ec56c7827d391fa6e8dfd1ca/README.md), [index.html](https://github.com/S-Lowes/Code-Institute-MS1/blob/61d09f60aeb443a4ec56c7827d391fa6e8dfd1ca/index.html), [style.css](https://github.com/S-Lowes/Code-Institute-MS1/blob/61d09f60aeb443a4ec56c7827d391fa6e8dfd1ca/assets/css/style.css) | README contains user stories and a linked multi-device image; the HTML uses Bootstrap, and the CSS imports web fonts and has responsive rules | Explicit stories help explain why content exists and provide a basis for manual checks | The README's composite device image is not a substitute for page-by-page responsive evidence; external dependencies add setup and network requirements | Keep acceptance checks tied to concrete UAR pages and capture real browser screenshots at documented widths |
 
-## Techniques explained in plain English
+Techniques explained in plain English
 
-1. **CSS section headings:** comments such as “base”, “navigation” and “responsive” create landmarks in one stylesheet. A learner can find related rules without introducing a build system.
-2. **CSS custom properties:** a value such as `--primary` can be defined once and reused. Changing that value updates related accents consistently. UAR uses a small set of tokens for this reason.
-3. **User stories before page details:** a specific visitor need helps decide whether a page, link or feature belongs. UAR uses stories about understanding the concept, interpreting labels and checking scope, rather than borrowing another project's story wording.
+1. CSS section headings: comments such as “base”, “navigation” and “responsive” create landmarks in one stylesheet. A learner can find related rules without introducing a build system.
+2. CSS custom properties: a value such as `--primary` can be defined once and reused. Changing that value updates related accents consistently. UAR uses a small set of tokens for this reason.
+3. User stories before page details: a specific visitor need helps decide whether a page, link or feature belongs. UAR uses stories about understanding the concept, interpreting labels and checking scope, rather than borrowing another project's story wording.
 
-## Application and attribution
+Application and attribution
 
 These projects informed general research about documentation, page purpose and responsive CSS. No source code, distinctive wording or assets from them are included in UAR. Their authors retain their work; no licence was inferred from public access. Links above point to the inspected repository paths. This comparison is learning context only, not a claim that any example meets the current course requirements.

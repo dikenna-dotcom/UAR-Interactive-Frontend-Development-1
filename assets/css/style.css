@@ -10,6 +10,10 @@
   --primary-dark: #1e3a8a;
   --success: #166534;
   --success-bg: #dcfce7;
+  --warning: #854d0e;
+  --warning-bg: #fef3c7;
+  --blocker: #991b1b;
+  --blocker-bg: #fee2e2;
   --shadow: rgba(15, 23, 42, 0.08);
   --max-width: 72rem;
   --space-3: 0.75rem;
@@ -535,6 +539,231 @@ main {
   font-weight: 600;
 }
 
+/* Interactive review-planning form and generated summary. */
+.planner-layout {
+  align-items: start;
+}
+
+.planner-intro h2 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.planner-boundary,
+.planner-result-boundary {
+  padding: 1rem;
+  border-left: 4px solid var(--primary);
+  background: var(--panel);
+  color: var(--text-soft);
+}
+
+.planner-form,
+.planner-result {
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.planner-form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-field > label,
+.review-topics legend {
+  font-weight: 700;
+}
+
+.form-field label span,
+.field-help {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.field-help {
+  margin: 0;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  min-width: 0;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  background: var(--panel);
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.form-field select:focus-visible,
+.review-topics input[type="checkbox"]:focus-visible,
+.planner-actions button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.review-topics {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.review-data {
+  gap: 1rem;
+}
+
+.review-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.review-topics legend {
+  padding: 0 0.3rem;
+}
+
+.review-topics label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.review-topics input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  margin: 0.25rem 0 0;
+  accent-color: var(--primary);
+}
+
+.planner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.planner-actions button {
+  cursor: pointer;
+}
+
+.planner-result {
+  grid-column: 1 / -1;
+}
+
+.planner-result[hidden] {
+  display: none;
+}
+
+.planner-result h2 {
+  margin-top: 0;
+}
+
+.planner-result h3 {
+  margin-bottom: 0.25rem;
+}
+
+.planner-summary {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.35fr) minmax(0, 1fr);
+  gap: 0.5rem 1rem;
+}
+
+.planner-summary dt {
+  font-weight: 700;
+}
+
+.planner-summary dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--text-soft);
+  overflow-wrap: anywhere;
+}
+
+.planner-result .check-list {
+  margin-top: 0.5rem;
+}
+
+.overall-result {
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--primary);
+  background: var(--panel-alt);
+  font-weight: 700;
+}
+
+.decision-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.decision-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+}
+
+.decision-card h4 {
+  margin: 0 0 0.25rem;
+}
+
+.decision-card p {
+  margin: 0.35rem 0 0;
+}
+
+.decision-status {
+  font-weight: 700;
+}
+
+.decision-pass {
+  border-left-color: var(--success);
+  background: var(--success-bg);
+}
+
+.decision-pass .decision-status {
+  color: var(--success);
+}
+
+.decision-warning {
+  border-left-color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.decision-warning .decision-status {
+  color: var(--warning);
+}
+
+.decision-blocker {
+  border-left-color: var(--blocker);
+  background: var(--blocker-bg);
+}
+
+.decision-blocker .decision-status {
+  color: var(--blocker);
+}
+
 .page-shell {
   padding-top: 3.5rem;
 }
@@ -628,6 +857,7 @@ main {
   font-size: 1.5rem;
 }
 
+.site-footer h2,
 .site-footer h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -664,6 +894,10 @@ main {
   .nav-list {
     width: 100%;
   }
+
+  .planner-result {
+    grid-column: auto;
+  }
 }
 
 /* Narrow screens keep navigation visible and give hero actions full-width targets. */
@@ -682,6 +916,19 @@ main {
 
   .button {
     width: 100%;
+  }
+
+  .planner-actions .button {
+    width: 100%;
+  }
+
+  .planner-summary {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .planner-summary dd {
+    margin-bottom: 0.65rem;
   }
 }
 
