@@ -91,7 +91,7 @@ Technologies Used
 3. JavaScript - Form validation, comparisons, generated results and reset behavior in the planner.
 4. Python 3.12.10 - Used for the local preview. The current Netlify deployment is static; an optional earlier Heroku setup uses Waitress.
 5. VS Code - The project editing environment and integrated browser used for local checks.
-6. Git - Local version control. The current repository does not have a GitHub remote.
+6. Git - Local version control, with a GitHub remote configured for the project repository. The latest commit is local until the pending push succeeds.
 
 The website has no front-end framework, external fonts or third-party UI libraries. The planner script was checked with JSHint 2.13.6. HTML was checked with the W3C Nu HTML Checker and CSS with the W3C Jigsaw CSS Validator.
 
@@ -137,7 +137,7 @@ The supplied project requirements list seven mandatory items. The current eviden
 | JavaScript responses to visitor actions | Implemented and tested for planner submission, different outcomes and reset. |
 | Main navigation and structured layout | Implemented across the eight connected pages. |
 | README explaining the project and its value | Documented here. |
-| Git and GitHub version control | Local Git history exists, but there is no GitHub remote and nothing has been pushed. This requirement remains incomplete. |
+| Git and GitHub version control | The project has genuine local Git history and is connected to its GitHub repository. The latest commit has not reached GitHub yet because authentication is still needed for the push. |
 | Attribution for external work | Research sources and AI assistance are acknowledged below; no external code or media are included. |
 | Deployment | The site is live on Netlify and has been checked. |
 
